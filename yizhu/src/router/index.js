@@ -1,22 +1,72 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-
+import HouseList from '../views/HouseList'
+import Screen from '../views/Screen'
+import Build from '../views/Building'
+import RoomInfo from '../views/RoomInfo'
+import Login from '../views/Login'
+import My from '../views/My'
+import FilterHouse from '../views/FilterHouse'
+import Footer from '../components/footer'
+import Dra from '../components/Dra'
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'Home',
-    component: Home
+    components: {
+      "main": HouseList,
+      "footer": Footer
+    }
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/nearby-property',
+    name: 'screen',
+    components: {
+      "main": Screen
+    }
+  }, 
+  {
+    path: '/filter-house',
+    name: 'filter',
+    components: {
+      'main': FilterHouse
+    }
+  },
+   {
+    path: '/independent-building',
+    name: 'build',
+    components: {
+      'main': Build
+    }
+  },
+  {
+    path: '/roominfo',
+    name: 'roominfo',
+    components: {
+      'main': RoomInfo
+    }
+  },
+  {
+    path: '/test',
+    name: 'test',
+    components: {
+      'main': Dra
+    }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    components: {
+      'main': Login
+    }
+  },
+  {
+    path: '/my',
+    name: 'my',
+    components: {
+      'main': Login
+    }
   }
 ]
 
